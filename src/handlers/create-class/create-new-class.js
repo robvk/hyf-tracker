@@ -16,7 +16,7 @@ export function createNewClass(classNumber) {
   });
 
   createAndAttach(`p`, titleContainer, `append`, {
-    text: `Class ${classNumber}`,
+    text: `${classNumber}`,
     classList: `title class-title`,
   });
 
