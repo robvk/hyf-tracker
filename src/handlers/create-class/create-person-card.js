@@ -1,6 +1,6 @@
-import { createAndAppend } from './create-element.js';
+import { createAndAppend } from "../../helpers/create-element.js";
 
-export function createCard(parent, list) {
+export function createPersonCard(parent, list) {
   const card = createAndAppend(`div`, parent, {
     class: `card`,
   });
@@ -22,12 +22,12 @@ export function createCard(parent, list) {
 
   const content1 = createAndAppend(`a`, cardContent, {
     href: list.assignedTickets,
-    target: '_blank',
+    target: "_blank",
     text: `My assigned tickets`,
   });
   const content2 = createAndAppend(`a`, cardContent, {
     href: list.github,
-    target: '_blank',
+    target: "_blank",
     text: `My github`,
   });
 }
