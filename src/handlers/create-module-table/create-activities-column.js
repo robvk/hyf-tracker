@@ -1,8 +1,8 @@
-import { createAndAttach } from "../../helpers/create-and-attach.js";
-import { weekActivities } from "../../data.js";
+import { createAfter } from '../../helpers/create-element.js';
+import { weekActivities } from '../../data.js';
 
 export function createActivitiesColumn(parent, idx) {
-  const activityData = createAndAttach(`td`, parent, `after`, {
+  const activityData = createAfter(`td`, parent, {
     text: `${weekActivities[idx]}`,
     classList: `activity-data table-data`,
   });

@@ -1,26 +1,26 @@
-import { createAndAttach } from "../../helpers/create-and-attach.js";
+import { createAndAppend } from '../../helpers/create-element.js';
 
 export function createHeader(parent) {
-  const header = createAndAttach(`header`, parent, `append`, {
+  const header = createAndAppend(`header`, parent, {
     classList: `header`,
   });
 
-  createAndAttach(`button`, header, `append`, {
+  createAndAppend(`button`, header, {
     text: `Add new class`,
     classList: `btn btn-header btn-add-class`,
     id: `btn-add-class`,
   });
 
-  const dateWrapper = createAndAttach(`div`, header, `append`, {
+  const dateWrapper = createAndAppend(`div`, header, {
     classList: `date-wrapper`,
   });
 
-  createAndAttach(`p`, dateWrapper, `append`, {
+  createAndAppend(`p`, dateWrapper, {
     text: new Date().toLocaleDateString(),
     classList: `text date-text`,
   });
 
-  createAndAttach(`button`, header, `append`, {
+  createAndAppend(`button`, header, {
     text: `Holiday calender`,
     classList: `btn btn-header btn-holiday-calendar`,
     type: `submit`,

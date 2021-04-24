@@ -1,26 +1,26 @@
-import { createAndAttach } from "../../helpers/create-and-attach.js";
+import { createAndAppend } from '../../helpers/create-element.js';
 
 export function createTableHead(tBody) {
-  const tableHead = createAndAttach(`tr`, tBody, `append`, {
+  const tableHead = createAndAppend(`tr`, tBody, {
     classList: `table-row table-head`,
   });
 
-  createAndAttach(`td`, tableHead, `append`, {
+  createAndAppend(`td`, tableHead, {
     text: `Date`,
     classList: `date-head table-head`,
   });
 
-  createAndAttach(`td`, tableHead, `append`, {
+  createAndAppend(`td`, tableHead, {
     text: `Curriculum`,
     classList: `curriculum-head table-head`,
   });
 
-  createAndAttach(`td`, tableHead, `append`, {
+  createAndAppend(`td`, tableHead, {
     text: `Other`,
     classList: `other-head table-head`,
   });
 
-  createAndAttach(`td`, tableHead, `append`, {
+  createAndAppend(`td`, tableHead, {
     text: `Notes`,
     classList: `note-head table-head`,
   });

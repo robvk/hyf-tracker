@@ -1,6 +1,6 @@
-import { createAndAttach } from "../../helpers/create-and-attach.js";
-import { onClickEditBtn } from "../onclick-events/onclick-edit-btn.js";
-import { onClickUpdateBtn } from "../onclick-events/onclick-update-btn.js";
+import { createAndAppend } from '../../helpers/create-element.js';
+import { onClickEditBtn } from '../onclick-events/onclick-edit-btn.js';
+import { onClickUpdateBtn } from '../onclick-events/onclick-update-btn.js';
 
 export function createModulePageFooter(
   parent,
@@ -8,27 +8,27 @@ export function createModulePageFooter(
   moduleName,
   weekNumber
 ) {
-  const btnsWrapper = createAndAttach(`div`, parent, `append`, {
+  const btnsWrapper = createAndAppend(`div`, parent, {
     classList: `footer-btns-wrapper`,
   });
 
-  const editBtn = createAndAttach(`button`, btnsWrapper, `append`, {
+  const editBtn = createAndAppend(`button`, btnsWrapper, {
     text: `Edit`,
     classList: `btn-footer btn-edit`,
     type: `submit`,
-    "data-class-number": `${classNumber}`,
-    "data-module-name": `${moduleName}`,
-    "data-week-number": `${weekNumber}`,
+    'data-class-number': `${classNumber}`,
+    'data-module-name': `${moduleName}`,
+    'data-week-number': `${weekNumber}`,
   });
-  editBtn.addEventListener("click", onClickEditBtn);
+  editBtn.addEventListener('click', onClickEditBtn);
 
-  const updateBtn = createAndAttach(`button`, btnsWrapper, `append`, {
+  const updateBtn = createAndAppend(`button`, btnsWrapper, {
     text: `Update`,
     classList: `btn-footer btn-update`,
     type: `submit`,
-    "data-class-number": `${classNumber}`,
-    "data-module-name": `${moduleName}`,
-    "data-week-number": `${weekNumber}`,
+    'data-class-number': `${classNumber}`,
+    'data-module-name': `${moduleName}`,
+    'data-week-number': `${weekNumber}`,
   });
-  updateBtn.addEventListener("click", onClickUpdateBtn);
+  updateBtn.addEventListener('click', onClickUpdateBtn);
 }

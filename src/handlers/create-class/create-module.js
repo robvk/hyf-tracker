@@ -1,9 +1,9 @@
-import { createAndAttach } from '../../helpers/create-and-attach.js';
+import { createAndAppend } from '../../helpers/create-element.js';
 import { onClickModule } from '../onclick-events/onclick-module.js';
 
 export function createModule(classNumber, parent, list) {
   list.forEach((module) => {
-    const moduleContainer = createAndAttach(`div`, parent, `append`, {
+    const moduleContainer = createAndAppend(`div`, parent, {
       classList: `module module-wrapper ${module.name}-module`,
       'data-class-number': `${classNumber}`,
       'data-module-name': `${module.name}`,
@@ -11,13 +11,13 @@ export function createModule(classNumber, parent, list) {
     });
     moduleContainer.addEventListener('click', onClickModule);
 
-    createAndAttach(`img`, moduleContainer, `append`, {
+    createAndAppend(`img`, moduleContainer, {
       classList: `logo module-logo ${module.name}-logo`,
       src: `public/assets/${module.name}.png`,
       alt: `${module.name} logo`,
     });
 
-    createAndAttach(`p`, moduleContainer, `append`, {
+    createAndAppend(`p`, moduleContainer, {
       text: `${module.name}`,
       classList: `title module-title ${module.name}-title`,
     });
@@ -25,7 +25,7 @@ export function createModule(classNumber, parent, list) {
     const activeWeek = module.activeWeek;
 
     if (activeWeek) {
-      createAndAttach(`p`, moduleContainer, `append`, {
+      createAndAppend(`p`, moduleContainer, {
         text: `week ${module.activeWeek}`,
         classList: `week module-week ${module.name}-week`,
       });

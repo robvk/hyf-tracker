@@ -1,33 +1,33 @@
-import { createAndAttach } from "./create-and-attach.js";
+import { createAndAppend } from './create-element.js';
 
 export function createCard(parent, list) {
-  const card = createAndAttach(`div`, parent, `append`, {
+  const card = createAndAppend(`div`, parent, {
     class: `card`,
   });
-  const cardImage = createAndAttach(`div`, card, `append`, {
+  const cardImage = createAndAppend(`div`, card, {
     class: `card-image`,
   });
-  const img = createAndAttach(`img`, cardImage, `append`, {
+  const img = createAndAppend(`img`, cardImage, {
     src: list.pic,
   });
 
-  const cardTitle = createAndAttach(`div`, card, `append`, {
+  const cardTitle = createAndAppend(`div`, card, {
     text: list.name,
     class: `card-title`,
   });
 
-  const cardContent = createAndAttach(`div`, card, `append`, {
+  const cardContent = createAndAppend(`div`, card, {
     class: `card-content`,
   });
 
-  const content1 = createAndAttach(`a`, cardContent, `append`, {
+  const content1 = createAndAppend(`a`, cardContent, {
     href: list.assignedTickets,
-    target: "_blank",
+    target: '_blank',
     text: `My assigned tickets`,
   });
-  const content2 = createAndAttach(`a`, cardContent, `append`, {
+  const content2 = createAndAppend(`a`, cardContent, {
     href: list.github,
-    target: "_blank",
+    target: '_blank',
     text: `My github`,
   });
 }

@@ -1,11 +1,11 @@
-import { createAndAttach } from "../../helpers/create-and-attach.js";
+import { createAndAppend } from '../../helpers/create-element.js';
 
 export function createBody(parent) {
-  const hero = createAndAttach(`div`, parent, `append`, {
+  const hero = createAndAppend(`div`, parent, {
     classList: `hero`,
   });
 
-  createAndAttach(`div`, hero, `append`, {
+  createAndAppend(`div`, hero, {
     classList: `classes-wrapper`,
   });
 }

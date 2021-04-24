@@ -1,11 +1,11 @@
-import { query } from "../helpers/query-add-class.js";
-import { createAndAttach } from "../helpers/create-and-attach.js";
-import { createCard } from "../helpers/create-card.js";
+import { query } from '../helpers/query-add-class.js';
+import { createAndAppend } from '../helpers/create-element.js';
+import { createCard } from '../helpers/create-card.js';
 
 export function renderListCards(list, classNumber) {
   const hero = query(`.hero`);
 
-  const cardsWrapper = createAndAttach(`div`, hero, `append`, {
+  const cardsWrapper = createAndAppend(`div`, hero, {
     classList: `cards-wrapper`,
   });
   list.forEach((item) => {

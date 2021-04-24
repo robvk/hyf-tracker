@@ -1,5 +1,9 @@
 import { query, queryAddClass } from '../../helpers/query-add-class.js';
-import { createAndAttach } from '../../helpers/create-and-attach.js';
+import {
+  createAndAppend,
+  createBefore,
+  createAfter,
+} from '../../helpers/create-element.js';
 import { onClickList } from '../onclick-events/onclick-list.js';
 
 export function createModulePageHeader(classNumber, moduleName, activeWeek) {
@@ -7,16 +11,16 @@ export function createModulePageHeader(classNumber, moduleName, activeWeek) {
 
   const dateWrapper = query(`.date-wrapper`);
 
-  const leftWrapper = createAndAttach(`div`, dateWrapper, `before`, {
+  const leftWrapper = createBefore(`div`, dateWrapper, {
     classList: `column-wrapper class-title-wrapper`,
   });
 
-  createAndAttach(`p`, leftWrapper, `append`, {
+  createAndAppend(`p`, leftWrapper, {
     text: `${classNumber}`,
     classList: `sub-title class-sub-title`,
   });
 
-  const studentsList = createAndAttach(`p`, leftWrapper, `append`, {
+  const studentsList = createAndAppend(`p`, leftWrapper, {
     id: `students-list-btn`,
     text: `students list`,
     classList: `sub-title students-sub-title btn-header`,
@@ -24,17 +28,17 @@ export function createModulePageHeader(classNumber, moduleName, activeWeek) {
   });
   studentsList.addEventListener('click', onClickList);
 
-  const rightWrapper = createAndAttach(`div`, dateWrapper, `after`, {
+  const rightWrapper = createAfter(`div`, dateWrapper, {
     classList: `column-wrapper module-title-wrapper`,
   });
-  const subTitle = createAndAttach(`p`, rightWrapper, `append`, {
+  const subTitle = createAndAppend(`p`, rightWrapper, {
     text: `${moduleName}`,
     classList: `sub-title module-sub-title`,
   });
   if (activeWeek) {
     subTitle.textContent += ` - week${activeWeek}`;
   }
-  const mentorsList = createAndAttach(`p`, rightWrapper, `append`, {
+  const mentorsList = createAndAppend(`p`, rightWrapper, {
     id: `mentors-list-btn`,
     text: `mentors list`,
     classList: `sub-title mentors-sub-title btn-header`,
